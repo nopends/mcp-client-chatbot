@@ -40,7 +40,6 @@ import {
   DialogHeader,
   DialogTitle,
 } from "ui/dialog";
-import { authClient } from "auth/client";
 import { useTranslations } from "next-intl";
 
 type Props = {
@@ -66,7 +65,7 @@ export default function ChatBot({ threadId, initialMessages, slots }: Props) {
   ] = appStore(
     useShallow((state) => [
       state.mutate,
-      state.model,
+      state.chatModel,
       state.toolChoice,
       state.allowedAppDefaultToolkit,
       state.allowedMcpServers,
@@ -95,7 +94,7 @@ export default function ChatBot({ threadId, initialMessages, slots }: Props) {
       vercelAISdkV4ToolInvocationIssueCatcher(lastMessage);
       const request: ChatApiSchemaRequestBody = {
         id: latestRef.current.threadId,
-        model: latestRef.current.model,
+        chatModel: latestRef.current.model,
         toolChoice: latestRef.current.toolChoice,
         allowedAppDefaultToolkit: latestRef.current.allowedAppDefaultToolkit,
         allowedMcpServers: latestRef.current.allowedMcpServers,
@@ -113,11 +112,7 @@ export default function ChatBot({ threadId, initialMessages, slots }: Props) {
     },
     onError: (error) => {
       console.error(error);
-      if (error.message.includes("Unauthorized")) {
-        authClient.signOut().finally(() => {
-          window.location.href = "/sign-in";
-        });
-      }
+
       toast.error(
         truncateString(error.message, 100) ||
           "An error occured, please try again!",

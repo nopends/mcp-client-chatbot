@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.8.0](https://github.com/cgoinglove/mcp-client-chatbot/compare/v1.7.0...v1.8.0) (2025-06-11)
+
+
+### Features
+
+* add openAI compatible provider support ([#92](https://github.com/cgoinglove/mcp-client-chatbot/issues/92)) ([6682c9a](https://github.com/cgoinglove/mcp-client-chatbot/commit/6682c9a320aff9d91912489661d27ae9bb0f4440))
+
+
+### Bug Fixes
+
+* Enhance component styles and configurations ([a7284f1](https://github.com/cgoinglove/mcp-client-chatbot/commit/a7284f12ca02ee29f7da4d57e4fe6e8c6ecb2dfc))
+
+## [1.7.0](https://github.com/cgoinglove/mcp-client-chatbot/compare/v1.6.2...v1.7.0) (2025-06-06)
+
+
+### Features
+
+* Per User Custom instructions ([#86](https://github.com/cgoinglove/mcp-client-chatbot/issues/86)) ([d45c968](https://github.com/cgoinglove/mcp-client-chatbot/commit/d45c9684adfb0d9b163c83f3bb63310eef572279))
+
 ## [1.6.2](https://github.com/cgoinglove/mcp-client-chatbot/compare/v1.6.1...v1.6.2) (2025-06-04)
 
 
